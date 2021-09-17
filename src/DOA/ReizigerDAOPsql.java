@@ -148,8 +148,6 @@ public class ReizigerDAOPsql implements ReizigerDAO{
             ResultSet result = prepStatement.executeQuery();
             while(result.next()) {
                 Reiziger reiziger = new Reiziger( result.getInt("reiziger_id"),result.getString("voorletters"), result.getString("tussenvoegsel"), result.getString("achternaam"), result.getDate("geboortedatum"));
-                // voeg if toe als adao null is
-
                 adao.findByReiziger(reiziger);
                 reizigers.add(reiziger);
             }
@@ -175,7 +173,6 @@ public class ReizigerDAOPsql implements ReizigerDAO{
             ResultSet result = prepStatement.executeQuery();
             while (result.next()){
                 Reiziger reiziger = new Reiziger(result.getInt("reiziger_id"),result.getString("voorletters"),result.getString("tussenvoegsel"),result.getString("achternaam"),result.getDate("geboortedatum"));
-                // voeg if toe als adao null is
 
                 adao.findByReiziger(reiziger);
                 reizigers.add(reiziger);
